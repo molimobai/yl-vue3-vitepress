@@ -1,29 +1,92 @@
-module.exports = {
-    title: '标题',
+export default {
     base: '/yl-vue3-vitepress/',
-    description: 'Just playing around.',
+    title: 'Vue3-Vite-Cli 使用文档',
+    description: '基于vite为基础搭建的风格脚手架,提供多种模板以便于更高效的解决业务需求！',
+    lang: 'zh-CN',
+    head: [['link', { rel: 'icon', type: 'image/svg+xml', href: 'favicon.ico' }]],
     themeConfig: {
+        siteTitle: 'Vue3-Vite-Cli 使用文档',
+        repo: '',
+        repoLabel: '',
+        docsDir: 'docs',
+        docsBranch: 'master',
+        lastUpdatedText: '',
+        logo: '/favicon.ico',
+        algolia: {
+            appId: '',
+            apiKey: '',
+            indexName: 'vue3-vite-cli'
+        },
         nav: [
+            { text: '开始阅读', link: '/getting/why.html' },
+            { text: '模板', link: '/template/template-vue3-ts-initial.html' },
+            { text: '相关文档', link: '/documentation/vue.html' },
+            // { text: '码云', link: '' },
+        ],
+        // socialLinks: [
+        //     { icon: 'github', link: '' }
+        // ],
+        sidebar: [
+            // '/getting/': 'auto',
             {
-                text: '关于',
+                text: '开始阅读',
+                collapsible: true,
+                collapsed: false,
                 items: [
-                    { text: '关于页面1', link: '/about/about1/' },
-                    { text: '关于页面2', link: '/about/about2/' }
+                    {
+                        text: '简介',
+                        link: '/getting/why'
+                    }, {
+                        text: '模板说明',
+                        link: '/getting/template_introduction'
+                    },
+                ]
+            },
+            {
+                text: 'yl-cl-vue3-v1',
+                collapsible: true,
+                collapsed: false,
+                items: [
+                    {
+                        text: '快速了解',
+                        link: '/yl-cl-vue3-v1/index'
+                    }, {
+                        text: '项目介绍',
+                        link: '/yl-cl-vue3-v1/introduce'
+                    }, {
+                        text: '项目使用',
+                        link: ''
+                    }, {
+                        text: '插件集成',
+                        link: ''
+                    }, {
+                        text: '项目部署',
+                        link: ''
+                    }, {
+                        text: '更新日志',
+                        link: ''
+                    },
+                ]
+            },
+            {
+                text: '相关文档',
+                collapsible: true,
+                collapsed: false,
+                items: [
+                    {
+                        text: 'Vue 相关文档',
+                        link: '/documentation/vue'
+                    },
+                    {
+                        text: 'Webpack 相关文档',
+                        link: '/documentation/webpack'
+                    }
                 ]
             }
         ],
-        // sideber以对象的形式配置的话每个sidebar都是独立的 如果以数组的形式配置那么侧边栏是公共的 进入其他子页面都可以看到
-        sidebar: {
-            '/about/': [
-                {
-                    text: '关于侧边栏',
-                    items: [
-                        { text: '关于1', link: '/about/about1/' },
-                        { text: '关于2', link: '/about/about2/' }
-                    ]
-                },
-
-            ]
+        footer: {
+            message: 'ylsoft',
+            copyright: 'Copyright © 2023'
         }
     }
 }
